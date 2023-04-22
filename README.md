@@ -41,11 +41,6 @@ python3.7 -m pip install -r requirements.txt
 Note: You realistically need 16GB of ram or a 8GB video card. Otherwise you will wait forever.
 You can use GPU functions with atleast a 8GB video card that supports cuda tooklit 10.0 and cudnn for cuda toolkit 10. This install also works on windows with python 3.7 and nvidia, you must run command prompt as admin running python 3.7 on windows.
 
-Download the model:
-```
-python3.7 download_model.py 1558M
-```
-
 Set your telegram bot API key in src/GPT2-Learning.py
 ```
 Replace "BOTKEY" with telegram bot token i.e. "1827396499:AAHifc06oS31oQ9L3TuCiZxD9EIfKPi0oWQ"
