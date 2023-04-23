@@ -1,12 +1,16 @@
 FROM tensorflow/tensorflow:1.12.0-py3 as base
 
-FROM python:3.7.16
-
 ENV LANG=C.UTF-8
 ENV DEBIAN_FRONTEND=noninteractive
 
-COPY --from=base /gpt2-chatbot /gpt2-chatbot
+RUN mkdir /gpt2-chatbot
+WORKDIR /gpt2-chatbot
+
 COPY . /gpt2-chatbot/
+
+FROM python:3.7.16
+
+COPY --from=base /gpt2-chatbot /gpt2-chatbot
 
 WORKDIR /gpt2-chatbot
 
