@@ -15,8 +15,14 @@ COPY --from=base /gpt2-chatbot /gpt2-chatbot
 WORKDIR /gpt2-chatbot
 
 RUN apt-get update && apt-get upgrade -y
+RUN apt-get install -y --no-install-recommends \
+    build-essential \
+    libffi-dev \
+    libssl-dev \
+    python3-dev
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
+RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements-docker.txt
 RUN python3 download_model.py 1558M
 
