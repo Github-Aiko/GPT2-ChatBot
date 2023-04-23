@@ -43,8 +43,10 @@ You can use GPU functions with atleast a 8GB video card that supports cuda tookl
 
 Set your telegram bot API key in src/GPT2-Learning.py
 ```
-Replace "BOTKEY" with telegram bot token i.e. "1827396499:AAHifc06oS31oQ9L3TuCiZxD9EIfKPi0oWQ"
+Edit token telegram from config.py from "Token-Telegram"
 ```
+
+if you don't have telegram bot API key, you can get it from telegram bot father:
 
 Dowload the gpt-2 model: ( I reccomend 1558M for best results, but it takes a long time to download )
 ```
