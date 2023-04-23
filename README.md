@@ -87,7 +87,7 @@ docker run --rm -it --runtime=nvidia gpt-2-chatbot bash
 
 # Using docker HUB
 ```
-docker pull aikocute/gpt2-chatbot:latest && docker run --restart=always --name aikor -e tgtoken={Telegram-token} --network=host aikocute/gpt2-chatbot:latest
+docker pull aikocute/gpt2-chatbot:latest && docker run --restart=always --name gpt2-chatbot -e tgtoken={Telegram-token} --network=host aikocute/gpt2-chatbot:latest
 ```
 
 ### For quick command reference:
