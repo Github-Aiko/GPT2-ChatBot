@@ -1,4 +1,4 @@
-name: Publish Docker image
+name: Linux AMD64
 on:
   workflow_dispatch:
   push:
