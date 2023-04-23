@@ -1,0 +1,4 @@
+tqdm
+regex
+python-telegram-bot==12.0.0
+requests
