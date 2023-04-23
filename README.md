@@ -72,6 +72,18 @@ python3.7 src/GPT2-Learning.py
 
 You can edit start.sh to match your python command as you wish.
 
+Build the Dockerfile and tag the created image as gpt-2-chatbot:
+```
+docker build --tag gpt-2 -f Dockerfile.gpu . # or Dockerfile.cpu
+```
+
+Start an interactive bash session from the gpt-2-chatbot docker image.
+You can opt to use the `--runtime=nvidia` flag if you have access to a NVIDIA GPU and a valid install of [nvidia-docker 2.0](https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)).
+```
+docker run --rm -it --runtime=nvidia gpt-2-chatbot bash
+```
+
+
 ### For quick command reference:
 
 ```
