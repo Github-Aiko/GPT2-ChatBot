@@ -10,8 +10,8 @@ ENV NVIDIA_VISIBLE_DEVICES=all \
     NVIDIA_REQUIRE_CUDA="cuda>=8.0" \
     LANG=C.UTF-8
 
-RUN mkdir /GPT2-ChatBot
-WORKDIR /GPT2-ChatBot
-ADD . /GPT2-ChatBot
+RUN mkdir /gpt2-chatbot
+WORKDIR /gpt2-chatbot
+ADD . /gpt2-chatbot
 RUN pip3.7 install -r requirements.txt
 RUN python3.7 download_model.py 1558M
