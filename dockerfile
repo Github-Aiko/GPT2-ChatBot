@@ -8,7 +8,11 @@ WORKDIR /gpt2-chatbot
 
 COPY . /gpt2-chatbot/
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-recommends python3.7 python3-pip python3.7-dev git && \
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y --no-install-recommends software-properties-common && \
+    add-apt-repository ppa:deadsnakes/ppa -y && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends python3.7 python3.7-pip python3.7-dev git && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN pip3.7 install -r requirements.txt
