@@ -8,6 +8,7 @@ WORKDIR /gpt2-chatbot
 COPY . /gpt2-chatbot/
 COPY config.py /gpt2-chatbot/
 
+RUN apt-get update && apt-get install -y python3.7 python3-pip python3.7-dev git
 RUN pip3.7 install -r requirements.txt
 RUN python3.7 download_model.py 1558M
 
