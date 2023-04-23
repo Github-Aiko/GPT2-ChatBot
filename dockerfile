@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:1.12.0-py3
+FROM tensorflow/tensorflow:1.12.0-py3 as base
 
 ENV LANG=C.UTF-8
 ENV DEBIAN_FRONTEND=noninteractive
@@ -15,7 +15,11 @@ RUN apt-get update
 
 FROM python:3.7.16
 
-RUN python3 -m pip install -r requirements.txt
+COPY --from=base /gpt2-chatbot /gpt2-chatbot
+
+WORKDIR /gpt2-chatbot
+
+RUN pip3 install -r requirements.txt
 RUN python3 download_model.py 1558M
 
 ENV tgtoken=Token-Telegram
