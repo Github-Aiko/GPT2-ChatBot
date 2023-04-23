@@ -12,7 +12,7 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y --no-install-recommends software-properties-common
 RUN add-apt-repository ppa:deadsnakes/ppa -y
 RUN apt-get update
-RUN apt-get install -y --no-install-recommends python3.7 python3.7-dev git
+RUN apt-get install -y --no-install-recommends python3.7 git
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN python3.7 get-pip.py
