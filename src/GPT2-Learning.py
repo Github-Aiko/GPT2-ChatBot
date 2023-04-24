@@ -541,6 +541,9 @@ def main():
     # Create the Updater and pass it your bot's token.
     # Make sure to set use_context=True to use the new context based callbacks
     # Post version 12 this will no longer be necessary
+    version = "0.3"
+    print("Starting bot...")
+    print("Version: v" + version)
     updater = Updater(config.tgtoken, use_context=False)
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
