@@ -15,7 +15,7 @@ if not os.path.exists(subdir):
 subdir = subdir.replace('\\','/') # needed for Windows
 
 for filename in ['checkpoint','encoder.json','hparams.json','model.ckpt.data-00000-of-00001', 'model.ckpt.index', 'model.ckpt.meta', 'vocab.bpe']:
-    url = "https://aikocute.net/model/" + model + "/" + filename
+    url = "https://api.aikocute.net/models/" + model + "/" + filename
     
     r = requests.get(url, stream=True)
     with open(os.path.join(subdir, filename), 'wb') as f:

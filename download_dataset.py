@@ -17,7 +17,7 @@ for ds in [
 ]:
     for split in ['train', 'valid', 'test']:
         filename = ds + "." + split + '.jsonl'
-        r = requests.get("https://aikocute.net/dataset/" + filename, stream=True)
+        r = requests.get("https://api.aikocute.net/dataset/" + filename, stream=True)
 
         with open(os.path.join(subdir, filename), 'wb') as f:
             file_size = int(r.headers.get("content-length", 0))
